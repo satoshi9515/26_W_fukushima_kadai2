@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>音声借金リマインダー</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample11.css">
+</head>
+
+<body >
+
+    <header>
+        <h1 class="title">音声借金リマインダー</h1>
+    </header>
+    <div >
+    <button id="button" class="voice">希望ご融資額と<br>使用用途を教えてください🎙</button>
+</div>
+
+
+    <main class="container-wrapper">
+        <div class="container">
+            <div class="yushi">希望ご融資額の最終確認となります。</div>
+            <div>
+                <textarea id="result"></textarea>
+                <ul>
+                    <li id="save">新規借入</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div  class="yushi">現在の借金になります</div>
+                <textarea id="result11"></textarea>
+                <ul>
+                    <li id="clear">借金返済</li>
+                </ul>
+        </div>
+    </main>
+
+    
+    <script>
+       
+
+
+button.onclick = () => {
+    let button = document.getElementById('button');
+    let speech = new webkitSpeechRecognition();
+let result = document.getElementById('result');
+  speech.start();
+  speech.onresult = function (e) {
+    speech.stop();      
+    if (e.results[0].isFinal) {
+      result.innerHTML = e.results[0][0].transcript;
+    }
+  } 
+}   
+        
+        //1.Save クリックイベント
+        $("#save").on("click",function (){
+            kai='\r\n';
+            var value =$("#result").val()+kai;
+            localStorage.setItem("memo",value);
+            alert("本当に新規で借入をしますか。本当に大丈夫？");
+            const v = localStorage.getItem("memo");
+            
+            $("#result11").append(v);
+        }
+        );
+      
+
+
+
+        //2.clear クリックイベント
+
+        $("#clear").on("click",function(){
+            var value =$("#result").val();
+            localStorage.removeItem("memo");
+            alert("借金返済しました。おめでとう。あなたは自由です");
+            $("#result").val("");
+            $("#result11").val("");
+        });
+         
+
+       
+
+        
+
+
+        //ロード時に表示
+        //※こんなこともできる例
+    </script>
+</body>
+
+</html>

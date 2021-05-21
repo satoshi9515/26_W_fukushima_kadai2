@@ -1,0 +1,83 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:center;
+    font-size: 32px;
+    background-image: url("../img/ushi1.jpg");
+    background-size: cover;
+    color:white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+header{
+    background-color: #fff;
+    text-align: center;
+    background-color:transparent;
+    color: rgb(245, 245, 12);
+    -webkit-text-stroke: 3px red;
+    font-weight: bold;
+    font-size:30px;
+}
+.container-wrapper{
+    display: flex;
+}
+.yushi{
+    color: rgb(245, 245, 12);
+    -webkit-text-stroke: 1px red;
+    font-weight: bold;
+    font-size:30px;
+
+}
+.voice{
+    margin: 0 auto;
+    border-radius: 50%;
+    display: block;
+    height:150px;
+    width: 400px;
+    font-weight: bold;
+    background-color:rgb(240, 190, 188);
+    font-size: 25px;
+
+}
+main{
+    position:relative;
+    background-color:transparent;
+}
+
+p{
+    font-size:200%;
+    text-align: center;
+    height:200px;
+}
+ul{
+    padding: 0;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    background-color:black;
+    width:80%;
+    margin: 0 auto;
+}
+li{
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color:transparent;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+textarea{
+  width: 80%;
+  height: 120px;
+  box-shadow: wheat;
+  border-radius: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  padding: 20px;
+
+}
+.title{
+    margin: 0;
+}
